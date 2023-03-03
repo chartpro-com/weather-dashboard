@@ -1,4 +1,4 @@
-
+/* Basic styles */
 html, body {
     height: 100%;
     margin: 0;
@@ -40,3 +40,33 @@ html, body {
     margin-bottom: 0.5rem;
     cursor: pointer;
   }
+  
+  /* Main content */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+  }
+  
+  /* Search container */
+  #search-container {
+    display: flex;
+    justify-content: center;
+    margin-left: 2rem;
+  }
+  
+  #city-input {
+    margin-right: 1rem;
+  }
+  
