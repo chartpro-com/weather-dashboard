@@ -1,0 +1,42 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+  
+  #wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Sidebar */
+  #sidebar {
+    background-color: #eee;
+    border-right: 1px solid #ccc;
+    padding: 2rem;
+    width: 300px;
+  }
+  
+  #search-history-container {
+    margin-bottom: 2rem;
+  }
+  
+  #search-history {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #search-history li {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }

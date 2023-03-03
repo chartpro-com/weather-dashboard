@@ -15,7 +15,29 @@
     </aside>
 
     <main>
+        <h1>Weather Dashboard</h1>
+        <div id="search-container">
+          <form id="search-form">
+            <label for="city-input">Enter a city:</label>
+            <input type="text" id="city-input" placeholder="i.e. Chicago, Miami">
+            <!-- future button -->
+          </form>
+        </div>
+      </header>
 
+      <div id="current-weather-container">
+        <h2 id="city-name"></h2>
+        <p id="current-date"></p>
+        <!-- future icon -->
+        <p id="temperature"></p>
+        <p id="humidity"></p>
+        <p id="wind-speed"></p>
+      </div>
+
+      <div id="forecast-container">
+        <h2>5-Day Forecast:</h2>
+        <div id="forecast-cards"></div>
+      </div>
     </main>
   </div>
 
