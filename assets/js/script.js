@@ -3,16 +3,11 @@ var searchForm = document.querySelector('#search-form');
 var cityInput = document.querySelector('#city-input');
 var searchHistoryElement = document.querySelector('#search-history');
 
-var searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
-
-if (!searchHistory){
-    console.log("no preivous city");
-}
+var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || []
 
 function renderSearchHistory() {
     searchHistoryElement.innerHTML = '';
     searchHistory.forEach((city) => {
-        // error message
       var li = document.createElement('li');
       li.textContent = city;
       searchHistoryElement.appendChild(li);
