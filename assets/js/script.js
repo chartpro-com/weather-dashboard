@@ -24,7 +24,7 @@ function renderSearchHistory() {
 
 
 function renderCurrentWeather(city, weather) {
-  cityNameElement.textContent = `${city} (${currentDateElement.textContent})`;
+  cityNameElement.textContent = `${city}`;
   weatherIconElement.setAttribute('src', `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`);
   temperatureElement.textContent = `Temperature: ${weather.main.temp} °F`;
   humidityElement.textContent = `Humidity: ${weather.main.humidity}%`;
@@ -65,7 +65,7 @@ searchForm.addEventListener('submit', (mainPage) => {
   mainPage.preventDefault();
   var city = cityInput.value.trim();
 
-    // API querty
+    // API query
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`)
     .then(response => response.json())
     .then(data => {

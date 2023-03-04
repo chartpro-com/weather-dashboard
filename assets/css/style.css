@@ -1,4 +1,4 @@
-/* Basic styles */
+
 html, body {
     height: 100%;
     margin: 0;
@@ -18,7 +18,7 @@ html, body {
     width: 100%;
   }
   
-  /* Sidebar */
+  /* Sidebar*/
   #sidebar {
     background-color: #eee;
     border-right: 1px solid #ccc;
@@ -41,7 +41,7 @@ html, body {
     cursor: pointer;
   }
   
-  /* Main content */
+  /* Main*/
   main {
     display: flex;
     flex-direction: column;
@@ -68,5 +68,28 @@ html, body {
   
   #city-input {
     margin-right: 1rem;
+  }
+  
+  /* Current weather container */
+  #current-weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #weather-icon {
+    width: 5rem;
+    height: 5rem;
+  }
+  
+  /* Forecast container */
+  #forecast-container {
+    margin-top: 2rem;
+  }
+  
+  #forecast-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
   }
   
