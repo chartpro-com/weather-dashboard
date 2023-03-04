@@ -37,21 +37,16 @@ function renderForecast(forecast) {
   for (let i = 0; i < forecast.list.length; i += 8) {
     var forecastItem = forecast.list[i];
 
-
     var date = new Date(forecastItem.dt * 1000);
     var formattedDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-
-
     var card = document.createElement('div');
     card.classList.add('forecast-card');
-
-
     var cardContent = `
       <p>${formattedDate}</p>
       <img src="http://openweathermap.org/img/w/${forecastItem.weather[0].icon}.png" alt="Weather Icon">
       <p>Temp: ${forecastItem.main.temp} °F</p>
       <p>Humidity: ${forecastItem.main.humidity}%</p>
-      <p>Wind Speed: ${forecastItem.wind.speed} MPH</p>
+      <p>Wind: ${forecastItem.wind.speed}mph</p>
     `;
     card.innerHTML = cardContent;
 
@@ -63,7 +58,14 @@ function renderForecast(forecast) {
 
 searchForm.addEventListener('submit', (mainPage) => {
   mainPage.preventDefault();
-  var city = cityInput.value.trim();
+  var city = cityInput.value.trim().toUpperCase();
+
+
+  if (searchHistory.indexOf(city) === -1) {
+    searchHistory.push(city);
+    localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+    renderSearchHistory();
+  }
 
     // API query
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`)
@@ -83,7 +85,8 @@ searchForm.addEventListener('submit', (mainPage) => {
 
 searchHistoryElement.addEventListener('click', (sidebarCity) => {
     if (sidebarCity.target.tagName === 'LI') {
-    var city = e.target.textContent;
+    var city = sidebarCity.target.textContent;
+    console.log(city)
     cityInput.value = city;
     searchForm.dispatchEvent(new Event('submit'));
     }
