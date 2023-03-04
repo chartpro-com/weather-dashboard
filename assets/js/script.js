@@ -34,22 +34,24 @@ function renderCurrentWeather(city, weather) {
 
 function renderForecast(forecast) {
   forecastCardsElement.innerHTML = '';
-  for (let i = 0; i < forecast.list.length; i += 8) {
+  for (var i = 0; i < forecast.list.length; i += 8) {
     var forecastItem = forecast.list[i];
 
     var date = new Date(forecastItem.dt * 1000);
     var formattedDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+
     var card = document.createElement('div');
     card.classList.add('forecast-card');
+
     var cardContent = `
       <p>${formattedDate}</p>
       <img src="http://openweathermap.org/img/w/${forecastItem.weather[0].icon}.png" alt="Weather Icon">
       <p>Temp: ${forecastItem.main.temp} °F</p>
       <p>Humidity: ${forecastItem.main.humidity}%</p>
-      <p>Wind: ${forecastItem.wind.speed}mph</p>
+      <p>Wind:${forecastItem.wind.speed}mph</p>
+      <p>_________________</p>
     `;
     card.innerHTML = cardContent;
-
 
     forecastCardsElement.appendChild(card);
   }
@@ -59,7 +61,6 @@ function renderForecast(forecast) {
 searchForm.addEventListener('submit', (mainPage) => {
   mainPage.preventDefault();
   var city = cityInput.value.trim().toUpperCase();
-
 
   if (searchHistory.indexOf(city) === -1) {
     searchHistory.push(city);
