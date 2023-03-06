@@ -49,7 +49,7 @@ function renderForecast(forecast) {
       <p>Temp: ${forecastItem.main.temp} °F</p>
       <p>Humidity: ${forecastItem.main.humidity}%</p>
       <p>Wind:${forecastItem.wind.speed}mph</p>
-      <p>_________________</p>
+
     `;
     card.innerHTML = cardContent;
 
