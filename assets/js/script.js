@@ -28,7 +28,7 @@ function renderCurrentWeather(city, weather) {
   weatherIconElement.setAttribute('src', `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`);
   temperatureElement.textContent = `Temperature: ${weather.main.temp} °F`;
   humidityElement.textContent = `Humidity: ${weather.main.humidity}%`;
-  windSpeedElement.textContent = `Wind Speed: ${weather.wind.speed} MPH`;
+  windSpeedElement.textContent = `Wind Speed: ${weather.wind.speed} mph`;
 }
 
 
@@ -48,7 +48,7 @@ function renderForecast(forecast) {
       <img src="http://openweathermap.org/img/w/${forecastItem.weather[0].icon}.png" alt="Weather Icon">
       <p>Temp: ${forecastItem.main.temp} °F</p>
       <p>Humidity: ${forecastItem.main.humidity}%</p>
-      <p>Wind:${forecastItem.wind.speed}mph</p>
+      <p>Wind:${forecastItem.wind.speed} mph</p>
 
     `;
     card.innerHTML = cardContent;
