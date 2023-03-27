@@ -61,7 +61,6 @@ function renderForecast(forecast) {
 searchForm.addEventListener('submit', (mainPage) => {
   mainPage.preventDefault();
   var city = cityInput.value.trim().toUpperCase();
-
   if (searchHistory.indexOf(city) === -1) {
     searchHistory.push(city);
     localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
